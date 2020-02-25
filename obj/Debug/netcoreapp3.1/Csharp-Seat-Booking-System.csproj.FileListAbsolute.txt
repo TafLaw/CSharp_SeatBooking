@@ -153,8 +153,11 @@ C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.Views.pdb
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.csproj.CopyComplete
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.dll
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.pdb
+C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.MvcApplicationPartsAssemblyInfo.cache

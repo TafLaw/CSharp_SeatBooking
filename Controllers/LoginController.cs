@@ -14,11 +14,13 @@ using Csharp_Seat_Booking_System.Models;
 using Csharp_Seat_Booking_System.Data;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Data.Common;
+using Database.Connect;
 
 namespace Csharp_Seat_Booking_System.Controllers
 {
     public class LoginController : Controller
     {
+        private ConnDatabase connect;
         private const bool IsPersistent = false;
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly UserManager<IdentityUser> userManager;
@@ -120,15 +122,19 @@ namespace Csharp_Seat_Booking_System.Controllers
         [HttpGet]
         public IActionResult UserRegister()
         {
-
             return View();
-
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> UserRegister(UserRegisterModel model)
         {
+            var name =  model.UserEmail;
+            var pass = model.UserPassword;
+            
+            connect = new ConnDatabase();
+            connect.sqlQuery("INSERT INTO Users (UserEmail, UserPassword) Values('"+ name +"', '"+ pass+ "')");
+            connect.NonExecute();
             //We are going to communicate with the database here to input user data
             //we will create the data base in the models
             //we can rather make a function that will communicate with the database
@@ -153,8 +159,8 @@ namespace Csharp_Seat_Booking_System.Controllers
 
                 }*/
             }
-
             return View(model);
+
 
         }
 
