@@ -1,0 +1,64 @@
+﻿@using Csharp_Seat_Booking_System.Models;
+@using Csharp_Seat_Booking_System.Services;
+
+@inject JsonFileProductService ProductService;
+@{
+    Product[] Products = (Product [])ProductService.GetProducts().ToArray<Product>();
+    Product selectedProduct = (Product)Products[(int)ViewData["index"]];
+    var voteCount = 0;
+    var voteLabel = "";
+    var currentRating = 0;
+}
+
+<div id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle">
+    <div role="document">
+        <div>
+
+            <div>
+                <h5 id="productTitle">@selectedProduct.Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="card">
+
+                    <div class="card-img" style="background-image: url('@selectedProduct.Img');">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">@selectedProduct.Description</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+                    Book Seat
+                </a>
+                @if (voteCount == 0)
+                {
+                    <span>Be the first to vote!</span>
+                }
+                else
+                {
+                    <span>@voteCount @voteLabel</span>
+                }
+                @for (int i = 1; i < 6; i++)
+                {
+                    var currentStar = i;
+                    if (i <= currentRating)
+                    {
+                        <span class="fa fa-star checked" onclick=""></span>
+                    }
+                    else
+                    {
+                        <span class="fa fa-star" onclick=""></span>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

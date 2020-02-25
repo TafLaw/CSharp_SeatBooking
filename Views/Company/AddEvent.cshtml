@@ -1,0 +1,38 @@
+﻿@using System;
+@using System.Collections.Generic;
+@using System.Diagnostics;
+@using System.Linq;
+@using System.Threading.Tasks;
+@using Microsoft.AspNetCore.Mvc;
+@using Microsoft.Extensions.Logging;
+@using Csharp_Seat_Booking_System.Models;
+@{
+    ViewData["Title"] = "Seat Selection";
+    Venue[] Venues = (Venue[])ViewData["Venues"];
+}
+
+<h2>Book your seats.</h2>
+@model Event
+<form asp-action="AddEventToDb" asp-controller="Company">
+    <label>Event Name</label>
+    <input asp-for="EventName" name="Venue Name" type="Text" />
+    <label>Event Image URL</label>
+    <input asp-for="EventImg" name="Venue Name" type="Text" />
+    <br />
+    <label>Venue</label>
+    <select asp-for="VenueId">
+        @foreach(Venue VenueInArr in Venues)
+        {
+            <option value="@VenueInArr.VenueId">
+                @VenueInArr.Name
+            </option>
+        }
+    </select>
+    <br />
+    <label>Event Description</label>
+    <br />
+    <textarea asp-for="EventDesc" style="width:60%; height:50%;"></textarea>
+    <br />
+    <input type="submit" value="Add Event" />
+</form>
+

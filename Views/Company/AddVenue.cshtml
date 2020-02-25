@@ -1,0 +1,24 @@
+﻿@using System;
+@using System.Collections.Generic;
+@using System.Diagnostics;
+@using System.Linq;
+@using System.Threading.Tasks;
+@using Microsoft.AspNetCore.Mvc;
+@using Microsoft.Extensions.Logging;
+@using Csharp_Seat_Booking_System.Models;
+@{
+    ViewData["Title"] = "Seat Selection";
+}
+
+<h2>Book your seats.</h2>
+@model AddVenue
+<form asp-action="AddVenueToDb" asp-controller="Company">
+    <label>Venue Name</label>
+    <input asp-for="VenueName" name="Venue Name" type="Text" />
+    <br />
+    <label>Map</label>
+    <br />
+    <textarea asp-for="Map" style="width:60%; height:50%;"></textarea>
+    <br />
+    <input type="submit" value="Add Venue" />
+</form>

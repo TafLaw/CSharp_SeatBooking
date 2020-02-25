@@ -1,0 +1,70 @@
+@using System;
+@using System.Collections.Generic;
+@using System.Diagnostics;
+@using System.Linq;
+@using System.Threading.Tasks;
+@using Microsoft.AspNetCore.Mvc;
+@using Microsoft.Extensions.Logging;
+@using Csharp_Seat_Booking_System.Models;
+@{
+    ViewData["Title"] = "Seat Selection";
+    Seat[] SeatArr = (Seat[])ViewData["arr"];
+
+}
+@inject SignInManager<IdentityUser> signInManager;
+
+@if (signInManager.IsSignedIn(User))
+{
+    <h2>Book your seats.</h2>
+
+    <div style="position: relative">
+        @foreach (Seat SeatInArr in SeatArr)
+        {
+            string Scolor = "grey";
+            switch (SeatInArr.SeatCatergory)
+            {
+                case 1:
+                    Scolor = "blue";
+                    break;
+                case 2:
+                    Scolor = "orange";
+                    break;
+                case 3:
+                default:
+                    Scolor = "gold";
+                    break;
+            }
+            int id = SeatInArr.SeatId;
+            <button id=@id style="position: absolute; left: @(SeatInArr.SeatXCordinate * 30)px; top: @(SeatInArr.SeatYCordinate * 40)px; width:30px; height: 30px; color: @Scolor" onclick=AddSeat(@id)><i class="fas fa-chair"></i></button>
+        }
+        @model SeatListForCart
+        <form style="position: fixed; bottom: 100px" asp-action="AddSeatsToCart" asp-controller="Events">
+            <input asp-for="EventID" name="eventID" type="hidden" value="@ViewData[" EventID"]" />
+            <input asp-for="SeatList" name="seatList" id="seatList" type="hidden" value="" />
+            <input asp-for="UserId" type="hidden" value="@User.Identity.Name" />
+            <input type="submit" value="Add to Cart" onclick=AddToCart() />
+        </form>
+    </div>
+    <script>
+        var seats = [];
+        function AddSeat(seatId) {
+            var seat = document.getElementById(seatId);
+            if (seats.includes(seat.id)) {
+                seats.splice(seats.indexOf(seat.id), 1);
+                seat.style.color = "blue";
+            } else {
+                seat.style.color = "green";
+                seats.push(seat.id);
+            }
+            console.log(seats);
+        }
+
+        function AddToCart() {
+            document.getElementById("seatList").value = seats.join(' ');
+        }
+    </script>
+}
+else
+{
+    <meta http-equiv="refresh" content="0; URL='https://localhost:5001/Login/Login'" />
+}
