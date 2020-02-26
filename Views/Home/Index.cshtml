@@ -73,7 +73,9 @@
                             <p class="card-text"> @product.Description</p>
                         </div>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" href="#linkToSeats"> Book</button>
+                        <form asp-action="AllSeats">
+                            <button type="submit" class="btn btn-primary"> Book</button>
+                        </form>
                     </div>
                 </div>
             </div>

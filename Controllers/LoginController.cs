@@ -141,9 +141,9 @@ namespace Csharp_Seat_Booking_System.Controllers
             if (ModelState.IsValid)
             {
 
-             /*   var user = new IdentityUser { UserName = model.UserEmail };
+               var user = new IdentityUser { UserName = model.UserEmail };
                 var createdUser = await userManager.CreateAsync(user, model.UserPassword);
-
+                Console.WriteLine(createdUser);
                 if (createdUser.Succeeded)
                 {
 
@@ -157,8 +157,9 @@ namespace Csharp_Seat_Booking_System.Controllers
 
                     ModelState.AddModelError(string.Empty, error.Description);
 
-                }*/
+                }
             }
+                    // return RedirectToAction("ViewEvents", "Events");
             return View(model);
 
 

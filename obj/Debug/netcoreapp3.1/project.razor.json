@@ -20576,6 +20576,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\bbdnet2231\\Documents\\NEW-Csharp-Seat-Booking-System\\Csharp-Seat-Booking-System\\Views\\Events\\AllSeats.cshtml",
+      "TargetPath": "Views\\Events\\AllSeats.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\bbdnet2231\\Documents\\NEW-Csharp-Seat-Booking-System\\Csharp-Seat-Booking-System\\Views\\Events\\AddEvent.cshtml",
       "TargetPath": "Views\\Events\\AddEvent.cshtml",
       "FileKind": "mvc"

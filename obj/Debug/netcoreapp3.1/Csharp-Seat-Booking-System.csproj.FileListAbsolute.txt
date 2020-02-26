@@ -161,3 +161,4 @@ C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bbdnet2231\Documents\NEW-Csharp-Seat-Booking-System\Csharp-Seat-Booking-System\obj\Debug\netcoreapp3.1\Razor\Views\Events\AllSeats.cshtml.g.cs

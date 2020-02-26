@@ -9,11 +9,15 @@ using Csharp_Seat_Booking_System.Models;
 using Csharp_Seat_Booking_System.Services;
 using Csharp_Seat_Booking_System.Data;
 using System.Data.SqlClient;
+using Database.Connect;
+
 
 namespace Csharp_Seat_Booking_System.Controllers
 {
     public class EventsController : Controller
     {
+        
+        private ConnDatabase connect;
         private readonly CsharpSeatBookingSystemContext _databaseConn;
         public JsonFileProductService ProductService { get; }
         public EventsController(JsonFileProductService  productService, CsharpSeatBookingSystemContext databaseConn)
@@ -49,6 +53,19 @@ namespace Csharp_Seat_Booking_System.Controllers
             return View();
         }
 
+        public IActionResult AllSeats()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Book([Bind("SeatId","VenueId", "SeatCatergory", "SeatXCordinate", "SeatYCordinate")]Seat result)
+        {
+            connect = new ConnDatabase();
+            connect.sqlQuery("INSERT INTO Seat (UserID, VenueID, SeatNumber, SeatCatergory, SeatXCordinate, SeatYCordinate) Values('"+ 1 +"', '"+ result.VenueId+ "','"+ result.SeatCatergory +"', '"+ result.SeatCatergory+ "','"+ result.SeatXCordinate +"', '"+ result.SeatYCordinate+ "')");
+            connect.NonExecute();
+            return View("AllSeats");
+        }
         [HttpPost]
         [Route("api/addToCart")]
         public IActionResult AddSeatsToCart(SeatListForCart listOfSeats)

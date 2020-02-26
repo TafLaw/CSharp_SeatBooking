@@ -1,0 +1,1002 @@
+@model Seat
+
+<h1>Seats View</h1>
+<form asp-action="Book">
+    <input type="hidden" asp-for="SeatId">
+    <input type="hidden" asp-for="VenueId" value="1">
+    <input type="hidden" asp-for="SeatCatergory" value="3">
+    <input type="hidden" asp-for="SeatXCordinate" value="2">
+    <input type="hidden" asp-for="SeatYCordinate" value="2">
+    <input type="submit" value="Submit">
+</form>
+
+<body>
+
+    <body onload="onLoaderFunc()">
+
+        <div class="inputForm">
+        <center>
+          Name *: <input type="text" id="Username" required>
+          Number of Seats *: <input type="number" id="Numseats" required>
+          <br/><br/>
+          <button onclick="takeData()">Start Selecting</button>
+        </center>
+        </div>
+        
+        <div class="seatStructure">
+        <center>
+          
+        <table id="seatsBlock">
+         <p id="notification"></p>
+          <tr>
+            <td colspan="14"><div class="screen">SCREEN</div></td>
+            <td rowspan="20">
+              <div class="smallBox greenBox">Selected Seat</div> <br/>
+              <div class="smallBox redBox">Reserved Seat</div><br/>
+              <div class="smallBox emptyBox">Empty Seat</div><br/>
+            </td>
+            
+            <br/>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td></td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+          
+        <tr>
+            <td>A</td>
+            <div>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="1">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A1"></td></div></form>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="2">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A2"></td></div></form>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="3">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A3"></td></div></form>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="4">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A4"></td></div></form>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="5">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A5"></td></div></form>
+             <td class="seatGap"></td>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="6">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A6"></td></div></form>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="7">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A7"></td></div></form>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="8">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A8"></td></div></form>
+             <form asp-action="Book"><div><td>
+                 <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="9">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A9"></td></div></form>
+             <form asp-action="Book"><div><td>
+                  <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="10">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A10"></td></div></form>
+             <form asp-action="Book"><div><td>
+                  <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="11">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A11"></td></div></form>
+             <form asp-action="Book"><div><td>
+                  <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="12">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                 <input type="submit" class="seats" value="A12"></td></div></form>
+            </div>
+          </tr>
+          
+          <tr>
+            <td>B</td>
+        <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="13">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="14">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="15">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="16">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="17">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="18">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="19">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="20">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="21">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="22">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="23">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="24">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="B12"></td></div></form>
+        </div>
+          </tr>
+          
+          <tr>
+            <td>C</td>
+            <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="25">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="26">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="27">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="28">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="29">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="30">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="31">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="32">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="33">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="34">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="35">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="36">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="C12"></td></div></form>
+            </div>
+        </tr>
+          
+        <tr>
+            <td>D</td>
+         <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="37">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="38">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="39">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="40">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="41">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="42">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="43">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="44">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="45">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="46">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="47">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="48">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="D12"></td></div></form>
+        </div>
+        </tr>
+          
+        <tr>
+            <td>E</td>
+        <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="49">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="50">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="51">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="52">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="53">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="54">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="55">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="56">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="57">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="58">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="59">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="60">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="E12"></td></div></form>
+        </div>
+        </tr>
+          
+        <tr class="seatVGap"></tr>
+          
+        <tr>
+            <td>F</td>
+        <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="61">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="62">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="63">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="64">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="65">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="66">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="67">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="68">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="69">
+                 <input type="hidden" asp-for="SeatCatergory" value="3">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="70">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="71">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="72">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="F12"></td></div></form>
+        </div>
+        </tr>
+          
+        <tr>
+            <td>G</td>
+        <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="73">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="74">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="75">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="76">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="77">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="78">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="79">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="80">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="81">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="82">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="83">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="84">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="G12"></td></div></form>
+        </div>
+        </tr>
+          
+        <tr>
+            <td>H</td>
+            <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="85">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="86">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="87">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="88">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="89">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="90">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="91">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="92">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="93">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="94">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="95">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="96">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="H12"></td></div></form>
+        </div>
+        </tr>
+          
+        <tr>
+            <td>I</td>
+            <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="97">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="98">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="99">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="100">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="101">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="102">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="103">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="104">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="105">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="106">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="107">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="108">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="I12"></td></div></form>
+            </div>
+        </tr>
+          
+        <tr>
+            <td>J</td>
+            <div>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="109">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J1"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="110">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J2"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="111">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J3"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="112">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J4"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="113">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J5"></td></div></form>
+            <td></td>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="114">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J6"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="115">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J7"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="116">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J8"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="117">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J9"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="118">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J10"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="119">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J11"></td></div></form>
+            <form asp-action="Book"><div><td>
+                <input type="hidden" asp-for="SeatId">
+                 <input type="hidden" asp-for="VenueId" value="1">
+                 <input type="hidden" asp-for="SeatCatergory" value="120">
+                 <input type="hidden" asp-for="SeatXCordinate" value="2">
+                 <input type="hidden" asp-for="SeatYCordinate" value="2">
+                <input type="submit" class="seats" value="J12"></td></div></form>
+            </div>
+        </tr>
+          
+          
+        </table>
+          
+        <br/><button onclick="updateTextArea()">Confirm Selection</button>
+        </center>
+        </div>
+              
+        <br/><br/>
+        
+        <div class="displayerBoxes">
+        <center>
+          <table class="Displaytable">
+          <tr>
+            <th>Name</th>
+            <th>Number of Seats</th>
+            <th>Seats</th>
+          </tr>
+          <tr>
+            <td><textarea id="nameDisplay"></textarea></td>
+            <td><textarea id="NumberDisplay"></textarea></td>
+            <td><textarea id="seatsDisplay"></textarea></td>
+          </tr>
+        </table>
+       
+        </div>
+        </body>
+
+    </center>
+        
+         
+    
+</body>

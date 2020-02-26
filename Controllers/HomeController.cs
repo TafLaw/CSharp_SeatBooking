@@ -39,6 +39,13 @@ namespace Csharp_Seat_Booking_System.Controllers
                 return Ok();
 
             }
+            
+            [HttpPost]
+            public IActionResult AllSeats()
+            {
+                return Redirect("../Events/AllSeats");
+            }
+
 
             [Route("First")]
             [HttpGet]
