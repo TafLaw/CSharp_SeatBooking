@@ -1,0 +1,29 @@
+@model System.Int32
+
+    <h1>Most Watched Movie</h1>
+    <hr />
+
+    <table class="table">
+        <tr>
+            <th> Movie Name: </th>
+            <th> No. of people who watched: </th>
+        </tr>
+
+        @*@foreach (var item in Model)*@
+        @*  {*@
+        <tr>
+            <td> Gemini man </td>
+            <td> @Html.DisplayFor(Model => Model) </td>
+        </tr>
+        <tr>
+            <td> The Teminator, the dark faith </td>
+            <td> @Html.DisplayFor(Model => Model) </td>
+        </tr>
+        <tr>
+            <td> Joker </td>
+            <td> @Html.DisplayFor(Model => Model) </td>
+        </tr>
+
+
+        @*  {*@
+    </table>
