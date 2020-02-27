@@ -53,9 +53,12 @@ CREATE TABLE Seat
 	VenueID int NOT NULL,
 	SeatNumber int NOT NULL,
     SeatCatergory int NOT NULL,
-    SeatXCordinate int NOT NULL,
-    SeatYCordinate int NOT NULL
+	MovieName varchar (50) NOT NULL
 )
+
+ALTER TABLE Seat
+ADD CONSTRAINT UNQ_SeatNumber UNIQUE(SeatNumber);
+GO
 
 CREATE TABLE Venue
 (
