@@ -65,9 +65,18 @@ namespace Csharp_Seat_Booking_System.Controllers
             
             Console.WriteLine("prodct name");
             Console.WriteLine(result.ProductName);
-            connect = new ConnDatabase();
-            connect.sqlQuery("INSERT INTO Seat (UserID, VenueID, SeatNumber, SeatCatergory, MovieName) Values('"+ 1 +"', '"+ result.VenueId+ "','"+ result.SeatCatergory +"', '"+ result.SeatCatergory+ "','"+ result.ProductName +"')");
-            connect.NonExecute();
+
+            try
+            {
+                connect = new ConnDatabase();
+                connect.sqlQuery("INSERT INTO Seat (UserID, VenueID, SeatNumber, SeatCatergory, MovieName) Values('"+ 1 +"', '"+ result.VenueId+ "','"+ result.SeatCatergory +"', '"+ result.SeatCatergory+ "','"+ result.ProductName +"')");
+                connect.NonExecute();
+            }
+            catch (SqlException e)
+            {
+                return View("Error");
+                throw new Exception("seat booked", e);
+            }
             return View("AllSeats");
         }
         [HttpPost]

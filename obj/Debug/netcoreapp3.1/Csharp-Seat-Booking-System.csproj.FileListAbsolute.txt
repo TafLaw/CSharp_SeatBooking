@@ -327,3 +327,4 @@ C:\Users\bbdnet2231\Documents\CSharp_SeatBooking\obj\Debug\netcoreapp3.1\Csharp-
 C:\Users\bbdnet2231\Documents\CSharp_SeatBooking\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.csproj.CopyComplete
 C:\Users\bbdnet2231\Documents\CSharp_SeatBooking\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.dll
 C:\Users\bbdnet2231\Documents\CSharp_SeatBooking\obj\Debug\netcoreapp3.1\Csharp-Seat-Booking-System.pdb
+C:\Users\bbdnet2231\Documents\CSharp_SeatBooking\obj\Debug\netcoreapp3.1\Razor\Views\Events\Error.cshtml.g.cs
