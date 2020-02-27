@@ -1,5 +1,7 @@
 ﻿@inject SignInManager<IdentityUser> signInManager;
-
+@{
+    @using Csharp_Seat_Booking_System.Controllers;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +26,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Events" asp-action="ViewEvents">Home</a>
                         </li>
-                        @if (signInManager.IsSignedIn(User))
+                        @if (LoginController.sessionState)
                         {
                             <li class="nav-item">
                                 <form method="post" asp-action="logout" asp-controller="login">

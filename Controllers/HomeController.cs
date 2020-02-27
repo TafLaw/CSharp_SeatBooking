@@ -11,13 +11,13 @@ using Database.Connect;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace Csharp_Seat_Booking_System.Controllers
 {
     public class HomeController : Controller
-    {
-        private ConnDatabase connect;
-
-        public JsonFileProductService ProductService { get; }
+    { 
+            private ConnDatabase connect;
+            public JsonFileProductService ProductService { get; }
             public Product selectedProduct;
             public string selectedProductId { set; get; }
             public HomeController(JsonFileProductService productService)
@@ -27,24 +27,26 @@ namespace Csharp_Seat_Booking_System.Controllers
 
             public IActionResult Index()
             {
+                Console.WriteLine(LoginController.sessionState);
                 return View();
             }
-            
+
             public IActionResult MovieBoard()
             {
                 connect = new ConnDatabase();
-            string connectionString = "Data Source=THOKOZANIX\\SQLEXPRESS;Initial Catalog=SeatBooking;Integrated Security=True";
-            SqlConnection conn = new SqlConnection(connectionString);
-            //connect.sqlQuery("SELECT COUNT(*) FROM[SeatBooking].[dbo].[Seat] WHERE SeatNumber = 2; ");
+                string connectionString = "Data Source=THOKOZANIX\\SQLEXPRESS;Initial Catalog=SeatBooking;Integrated Security=True";
+                SqlConnection conn = new SqlConnection(connectionString);
+                //connect.sqlQuery("SELECT COUNT(*) FROM[SeatBooking].[dbo].[Seat] WHERE SeatNumber = 2; ");
 
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*)as numberofrows FROM[SeatBooking].[dbo].[Seat] WHERE SeatNumber = 2; ", conn);
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*)as numberofrows FROM[SeatBooking].[dbo].[Seat] WHERE SeatNumber = 2; ", conn);
 
-            conn.Open();
+                conn.Open();
 
-            int count = (int)cmd.ExecuteScalar();
-            //connect.NonExecute();
-            return View(count);
+                int count = (int)cmd.ExecuteScalar();
+                //connect.NonExecute();
+                return View(count);
             }
+
 
             [HttpGet] //response.
             public IEnumerable<Product> Get()

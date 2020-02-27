@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
+using Website.Models;
 
 namespace Csharp_Seat_Booking_System.Models
 {
@@ -19,6 +20,13 @@ namespace Csharp_Seat_Booking_System.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string UserPassword { get; set; }
+
+        public static bool PasswordMatch(string DBPass, string Pass)
+        {
+            if(SecurePasswordHasherHelper.Verify(Pass,DBPass))
+                return true;
+            return false;
+        }
 
     }
 }

@@ -1,5 +1,10 @@
 @model Seat
-
+@{
+    @using Csharp_Seat_Booking_System.Controllers;
+}
+@if (!LoginController.sessionState){
+    <meta http-equiv="refresh" content="0; URL='https://localhost:5001/Login/Login'" />
+}
 <h1>Seats View</h1>
 <form asp-action="Book">
     <input type="hidden" asp-for="SeatId">

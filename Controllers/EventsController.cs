@@ -27,6 +27,7 @@ namespace Csharp_Seat_Booking_System.Controllers
         }
 
         public IActionResult ViewEvents(){
+            
             ViewData["events"] = this.ProductService.GetProducts();
             return View();
         }
