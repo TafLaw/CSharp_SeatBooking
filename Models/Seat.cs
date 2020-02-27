@@ -24,6 +24,8 @@ namespace Csharp_Seat_Booking_System.Models
         public int SeatXCordinate { get; set; }
         [Required(ErrorMessage = "Required")]
         [Display(Name = "Seat y")]
+
+        public string ProductName {get; set; }
         public int SeatYCordinate { get; set; }
     }
 }

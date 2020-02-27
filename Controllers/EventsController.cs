@@ -60,10 +60,13 @@ namespace Csharp_Seat_Booking_System.Controllers
         }
 
         [HttpPost]
-        public IActionResult Book([Bind("SeatId","VenueId", "SeatCatergory", "SeatXCordinate", "SeatYCordinate")]Seat result)
+        public IActionResult Book([Bind("SeatId","VenueId", "SeatCatergory", "ProductName")]Seat result)
         {
+            
+            Console.WriteLine("prodct name");
+            Console.WriteLine(result.ProductName);
             connect = new ConnDatabase();
-            connect.sqlQuery("INSERT INTO Seat (UserID, VenueID, SeatNumber, SeatCatergory, SeatXCordinate, SeatYCordinate) Values('"+ 1 +"', '"+ result.VenueId+ "','"+ result.SeatCatergory +"', '"+ result.SeatCatergory+ "','"+ result.SeatXCordinate +"', '"+ result.SeatYCordinate+ "')");
+            connect.sqlQuery("INSERT INTO Seat (UserID, VenueID, SeatNumber, SeatCatergory, MovieName) Values('"+ 1 +"', '"+ result.VenueId+ "','"+ result.SeatCatergory +"', '"+ result.SeatCatergory+ "','"+ result.ProductName +"')");
             connect.NonExecute();
             return View("AllSeats");
         }

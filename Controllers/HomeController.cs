@@ -17,6 +17,7 @@ namespace Csharp_Seat_Booking_System.Controllers
     public class HomeController : Controller
     { 
             private ConnDatabase connect;
+            public static string Name;
             public JsonFileProductService ProductService { get; }
             public Product selectedProduct;
             public string selectedProductId { set; get; }
@@ -34,7 +35,7 @@ namespace Csharp_Seat_Booking_System.Controllers
             public IActionResult MovieBoard()
             {
                 connect = new ConnDatabase();
-                string connectionString = "Data Source=THOKOZANIX\\SQLEXPRESS;Initial Catalog=SeatBooking;Integrated Security=True";
+                string connectionString = "Data Source=TafadzwaMu;Initial Catalog=SeatBooking;Integrated Security=True";
                 SqlConnection conn = new SqlConnection(connectionString);
                 //connect.sqlQuery("SELECT COUNT(*) FROM[SeatBooking].[dbo].[Seat] WHERE SeatNumber = 2; ");
 
@@ -65,8 +66,11 @@ namespace Csharp_Seat_Booking_System.Controllers
             }
             
             [HttpPost]
-            public IActionResult AllSeats()
+            public IActionResult AllSeats([Bind("ProductName")]Seat product)
             {
+                Name = product.ProductName;
+                // Console.WriteLine("hrer");
+                // Console.WriteLine(product.ProductName);
                 return Redirect("../Events/AllSeats");
             }
 
